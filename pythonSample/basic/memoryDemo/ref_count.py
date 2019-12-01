@@ -61,5 +61,16 @@ def gc_method():
     gc.get_referrers()
 
 
+def cycle_method():
+    a = []
+    b = [a]
+    a.append(b)
+
+    del a
+    del b
+    print('end')
+
+
+
 if __name__ == '__main__':
-    ref_count()
+    cycle_method()
